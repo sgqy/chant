@@ -26,13 +26,14 @@ int base4096_decode(const uint16_t *data, const int i_count,
 	}
 
 	out = calloc(size, 1);
-	memset(out, 0, size);
 
 	if (!out)
 	{
 		goto done;
 	}
 
+	memset(out, 0, size);
+	
 	for (i = 0; i < i_count; ++i)
 	{
 		if ((data[i] & PAD_FLAG) != 0)
